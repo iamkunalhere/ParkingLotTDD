@@ -1,7 +1,11 @@
 class ParkingLot {
     
     carParked(car) {
-    return true;
+        return true;
+    }
+
+    carUnParked(car) {
+        return false;
     }
 }
 module.exports = ParkingLot;
