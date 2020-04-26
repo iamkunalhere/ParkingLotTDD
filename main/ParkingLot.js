@@ -1,11 +1,30 @@
 class ParkingLot {
     
-    carParked(car) {
+    constructor(){
+        this.counter = 0;
+        this.parkingLotCapacity = 3;
+    }
+   
+carParked(carNumber,carName) {
+    if(this.isParkingLotFull()) {
+        throw new Error('parking lot is full');
+    }
+    this.parkingLot = new Map();
+    this.parkingLot.set(carNumber,carName);
+    this.counter++;
+    return true;
+}
+
+isParkingLotFull() {
+    if (this.counter == this.parkingLotCapacity) {
         return true;
     }
-
-    carUnParked(car) {
-        return false;
-    }
+    return false;
 }
+
+carUnParked(carNumber) {
+    return this.parkingLot.delete(carNumber);
+}
+}
+
 module.exports = ParkingLot;
