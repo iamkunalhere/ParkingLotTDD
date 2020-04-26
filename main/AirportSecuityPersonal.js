@@ -1,7 +1,7 @@
 class AirportSecurityPersonal {
 
     parkingLotIsFull() {
-        console.log("Parking lot is full");
+        console.log("AirportSecurityPersonal: Parking lot is full");
     }
 }
 

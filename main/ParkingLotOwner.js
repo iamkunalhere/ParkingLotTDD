@@ -1,7 +1,10 @@
 class ParkingLotOwner {
 
     parkingLotIsFull() {
-        console.log("Parking lot is full");
+        console.log("ParkingLotOwner: Parking lot is full");
+    }
+    parkingSpaceAvailable() {
+        console.log("ParkingLotOwner: Parking lot has Space");
     }
 }
 

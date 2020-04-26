@@ -14,6 +14,10 @@ carParked(carNumber,carName) {
     this.parkingLot = new Map();
     this.parkingLot.set(carNumber,carName);
     this.counter++;
+    if (this.counter < this.parkingLotCapacity) {
+        let parkingOwner = new parkingLotOwner();
+        parkingOwner.parkingSpaceAvailable();
+    }
     return true;
 }
 
