@@ -14,10 +14,6 @@ carParked(carNumber,carName) {
     this.parkingLot = new Map();
     this.parkingLot.set(carNumber,carName);
     this.counter++;
-    if (this.counter < this.parkingLotCapacity) {
-        let parkingOwner = new parkingLotOwner();
-        parkingOwner.parkingSpaceAvailable();
-    }
     return true;
 }
 
@@ -33,7 +29,13 @@ isParkingLotFull() {
 }
 
 carUnParked(carNumber) {
-    return this.parkingLot.delete(carNumber);
+    this.parkingLot.delete(carNumber);
+    this.counter--;
+    if (this.counter == this.parkingLotCapacity-1) {
+        let parkingOwner = new parkingLotOwner();
+        parkingOwner.parkingSpaceAvailable();
+    }
+    return true;
 }
 }
 
