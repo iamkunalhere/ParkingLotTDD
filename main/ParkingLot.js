@@ -1,3 +1,5 @@
+var parkingLotOwner = require('../main/ParkingLotOwner');
+
 class ParkingLot {
     
     constructor(){
@@ -17,6 +19,8 @@ carParked(carNumber,carName) {
 
 isParkingLotFull() {
     if (this.counter == this.parkingLotCapacity) {
+        let Owner = new parkingLotOwner();
+        Owner.parkingLotIsFull();
         return true;
     }
     return false;
